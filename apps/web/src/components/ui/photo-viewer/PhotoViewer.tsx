@@ -173,15 +173,17 @@ export const PhotoViewer = ({
               transition={Spring.presets.smooth}
               className="fixed inset-0"
             >
-              <Blurhash
-                hash={currentPhoto.blurhash}
-                width="100%"
-                height="100%"
-                resolutionX={32}
-                resolutionY={32}
-                punch={1}
-                className="size-fill"
-              />
+              {currentPhoto.blurhash && currentPhoto.blurhash.length >= 6 && (
+                <Blurhash
+                  hash={currentPhoto.blurhash}
+                  width="100%"
+                  height="100%"
+                  resolutionX={32}
+                  resolutionY={32}
+                  punch={1}
+                  className="size-fill"
+                />
+              )}
             </m.div>
           </PassiveFragment>
         )}

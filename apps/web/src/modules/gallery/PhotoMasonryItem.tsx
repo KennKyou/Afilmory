@@ -248,7 +248,7 @@ export const PhotoMasonryItem = ({
       onMouseLeave={handleMouseLeave}
     >
       {/* Blurhash 占位符 */}
-      {data.blurhash && (
+      {data.blurhash && data.blurhash.length >= 6 && (
         <Blurhash
           hash={data.blurhash}
           width="100%"

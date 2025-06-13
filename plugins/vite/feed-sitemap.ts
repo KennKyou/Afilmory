@@ -121,7 +121,7 @@ ${exifTags}
     <title><![CDATA[${config.title}]]></title>
     <link>${config.url}</link>
     <description><![CDATA[${config.description}]]></description>
-    <language>zh-CN</language>
+    <language>zh-TW</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <pubDate>${now}</pubDate>
     <ttl>60</ttl>

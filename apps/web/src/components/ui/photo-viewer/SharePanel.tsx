@@ -62,14 +62,14 @@ export const SharePanel = ({ photo, trigger, blobSrc }: SharePanelProps) => {
       color: 'text-white',
       bgColor: 'bg-[#0088CC]',
     },
-    {
-      id: 'weibo',
-      label: t('photo.share.weibo'),
-      icon: 'i-mingcute-weibo-line',
-      url: 'https://service.weibo.com/share/share.php?url={url}&title={text}',
-      color: 'text-white',
-      bgColor: 'bg-[#E6162D]',
-    },
+    // {
+    //   id: 'weibo',
+    //   label: t('photo.share.weibo'),
+    //   icon: 'i-mingcute-weibo-line',
+    //   url: 'https://service.weibo.com/share/share.php?url={url}&title={text}',
+    //   color: 'text-white',
+    //   bgColor: 'bg-[#E6162D]',
+    // },
   ]
 
   const handleNativeShare = useCallback(async () => {

@@ -12,7 +12,14 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: {
-      default: ['zh-CN'],
+      'zh-TW': ['zh-TW', 'zh-HK', 'zh-CN', 'en'],
+      'zh-HK': ['zh-HK', 'zh-TW', 'zh-CN', 'en'],
+      'zh-CN': ['zh-CN', 'zh-TW', 'zh-HK', 'en'],
+      default: ['zh-TW', 'zh-HK', 'zh-CN', 'en'],
+    },
+    detection: {
+      order: ['navigator', 'htmlTag'],
+      lookupFromPathIndex: 0,
     },
     defaultNS: 'app',
     resources,

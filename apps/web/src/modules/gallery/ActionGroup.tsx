@@ -48,7 +48,7 @@ export const ActionGroup = () => {
 
   return (
     <div className="flex items-center justify-center gap-3">
-      {/* 标签筛选按钮 */}
+      {/* 標籤篩選按鈕 */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
@@ -68,7 +68,7 @@ export const ActionGroup = () => {
 
         <DropdownMenuContent align="center" className="w-64">
           <DropdownMenuLabel className="relative">
-            <span>标签筛选</span>
+            <span>標籤篩選</span>
             {gallerySetting.selectedTags.length > 0 && (
               <Button
                 variant="ghost"
@@ -83,7 +83,7 @@ export const ActionGroup = () => {
 
           {allTags.length === 0 ? (
             <div className="px-3 py-8 text-center text-sm text-gray-500 dark:text-gray-400">
-              暂无标签
+              暫無標籤
             </div>
           ) : (
             <div className="max-h-64 overflow-y-auto">
@@ -128,7 +128,7 @@ export const ActionGroup = () => {
             icon={<i className="i-mingcute-sort-descending-line" />}
             checked={gallerySetting.sortOrder === 'desc'}
           >
-            <span>最新优先</span>
+            <span>最新優先</span>
           </DropdownMenuCheckboxItem>
 
           <DropdownMenuCheckboxItem
@@ -136,7 +136,7 @@ export const ActionGroup = () => {
             icon={<i className="i-mingcute-sort-ascending-line" />}
             checked={gallerySetting.sortOrder === 'asc'}
           >
-            <span>最早优先</span>
+            <span>最早優先</span>
           </DropdownMenuCheckboxItem>
         </DropdownMenuContent>
       </DropdownMenu>
