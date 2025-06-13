@@ -483,7 +483,7 @@ export const ExifPanel: FC<{
                     )}
                     <div className="mt-2 text-right">
                       <a
-                        href={`https://uri.amap.com/marker?position=${formattedExifData.gps.longitude},${formattedExifData.gps.latitude}&name=${encodeURIComponent(t('exif.gps.location.name'))}`}
+                        href={`https://www.google.com/maps/search/?api=1&query=${formattedExifData.gps.latitude},${formattedExifData.gps.longitude}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue inline-flex items-center gap-1 text-xs underline transition-colors hover:text-blue-300"
