@@ -335,7 +335,7 @@ export class WebGLImageViewerEngine extends ImageViewerEngineBase {
   ) {
     this.originalImageSrc = url
     this.isLoadingTexture = true
-    this.notifyLoadingStateChange(true, '图片加载中...')
+    this.notifyLoadingStateChange(true, '圖片加載中...')
 
     if (preknownWidth && preknownHeight) {
       this.imageWidth = preknownWidth
@@ -355,7 +355,7 @@ export class WebGLImageViewerEngine extends ImageViewerEngineBase {
             this.setupInitialScaling()
           }
 
-          this.notifyLoadingStateChange(true, '创建纹理中...')
+          this.notifyLoadingStateChange(true, '創建紋理中...')
           await this.createTexture(image)
 
           // Also, create an ImageBitmap and send to worker

@@ -319,3 +319,6 @@ MIT License © 2025 Innei
 ---
 
 If this project helps you, please give it a ⭐️ Star for support!
+
+`pnpm run build:manifest`
+`docker buildx build --platform linux/amd64,linux/arm64 -t dockerusername/dockerprojectname:latest --push .`

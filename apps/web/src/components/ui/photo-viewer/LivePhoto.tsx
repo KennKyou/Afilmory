@@ -283,17 +283,17 @@ export const LivePhoto = ({
         )}
         onMouseEnter={handleBadgeMouseEnter}
         onMouseLeave={handleBadgeMouseLeave}
-        title={isMobileDevice ? '长按播放实况照片' : '悬浮播放实况照片'}
+        title={isMobileDevice ? '長按播放實況照片' : '懸浮播放實況照片'}
       >
         {isConvertingVideo ? (
           <div className="flex items-center gap-1 px-1">
             <i className="i-mingcute-loading-line animate-spin" />
-            <span>实况视频转换中</span>
+            <span>實況影片轉換中</span>
           </div>
         ) : (
           <>
             <i className="i-mingcute-live-photo-line size-4" />
-            <span className="mr-1">实况</span>
+            <span className="mr-1">實況</span>
             {conversionMethod && (
               <span className="rounded bg-white/20 px-1 text-xs">
                 {conversionMethod === 'webcodecs' ? 'WebCodecs' : ''}
@@ -306,10 +306,10 @@ export const LivePhoto = ({
       {/* 操作提示 */}
       <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded bg-black/50 px-2 py-1 text-xs text-white opacity-0 duration-200 group-hover:opacity-50">
         {isConvertingVideo
-          ? `正在使用 ${isWebCodecsSupported() ? 'WebCodecs' : 'FFmpeg'} 转换视频格式...`
+          ? `正在使用 ${isWebCodecsSupported() ? 'WebCodecs' : 'FFmpeg'} 轉換影片格式...`
           : isMobileDevice
-            ? '长按播放实况照片 / 双击缩放'
-            : '悬浮实况标识播放 / 双击缩放'}
+            ? '長按播放實況照片 / 雙擊縮放'
+            : '懸浮實況圖示播放 / 雙擊縮放'}
       </div>
     </>
   )

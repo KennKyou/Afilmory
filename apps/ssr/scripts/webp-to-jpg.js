@@ -14,10 +14,10 @@ async function convertWebpToJpg(inputPath, outputPath) {
       .jpeg({ quality: 90 }) // 设置 JPG 质量为 90
       .toFile(outputPath)
     console.info(
-      `✅ 转换成功：${basename(inputPath)} -> ${basename(outputPath)}`,
+      `✅ 轉換成功：${basename(inputPath)} -> ${basename(outputPath)}`,
     )
   } catch (error) {
-    console.error(`❌ 转换失败：${basename(inputPath)}`, error.message)
+    console.error(`❌ 轉換失敗：${basename(inputPath)}`, error.message)
   }
 }
 
@@ -42,26 +42,26 @@ async function processDirectory(dirPath) {
       }
     }
   } catch (error) {
-    console.error(`❌ 处理目录失败：${dirPath}`, error.message)
+    console.error(`❌ 處理目錄失敗：${dirPath}`, error.message)
   }
 }
 
 // 主函数
 async function main() {
-  console.info('🚀 开始转换 WebP 图片到 JPG...')
-  console.info(`📁 目标目录：${thumbnailsDir}`)
+  console.info('🚀 開始轉換 WebP 圖片到 JPG...')
+  console.info(`📁 目標目錄：${thumbnailsDir}`)
 
   // 检查目录是否存在
   if (!existsSync(thumbnailsDir)) {
-    console.error(`❌ 目录不存在：${thumbnailsDir}`)
-    throw new Error('目标目录不存在')
+    console.error(`❌ 目錄不存在：${thumbnailsDir}`)
+    throw new Error('目標目錄不存在')
   }
 
   try {
     await processDirectory(thumbnailsDir)
-    console.info('✨ 所有转换任务完成！')
+    console.info('✨ 所有轉換任務完成！')
   } catch (error) {
-    console.error('❌ 转换过程中发生错误：', error.message)
+    console.error('❌ 轉換過程中發生錯誤：', error.message)
     throw error
   }
 }
