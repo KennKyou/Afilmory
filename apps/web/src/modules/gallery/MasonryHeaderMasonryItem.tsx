@@ -1,6 +1,5 @@
 import { photoLoader } from '@afilmory/data'
 import { siteConfig } from '@config'
-import { repository } from '@pkg'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import { useTranslation } from 'react-i18next'
 
@@ -108,7 +107,7 @@ export const MasonryHeaderMasonryItem = ({
               month: 'long',
               day: 'numeric',
             })}
-            <span className="ml-1">
+            {/* <span className="ml-1">
               (
               <a
                 href={`${repository.url}/commit/${GIT_COMMIT_HASH}`}
@@ -119,7 +118,7 @@ export const MasonryHeaderMasonryItem = ({
                 {GIT_COMMIT_HASH.slice(0, 6)}
               </a>
               )
-            </span>
+            </span> */}
           </span>
         </div>
       </div>
