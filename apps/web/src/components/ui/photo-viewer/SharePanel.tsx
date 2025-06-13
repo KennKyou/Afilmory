@@ -23,54 +23,54 @@ interface ShareOption {
   bgColor?: string
 }
 
-interface SocialShareOption {
-  id: string
-  label: string
-  icon: string
-  url: string
-  color: string
-  bgColor: string
-}
+// interface SocialShareOption {
+//   id: string
+//   label: string
+//   icon: string
+//   url: string
+//   color: string
+//   bgColor: string
+// }
 
 export const SharePanel = ({ photo, trigger, blobSrc }: SharePanelProps) => {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
 
   // 社交媒体分享选项
-  const socialOptions: SocialShareOption[] = [
-    {
-      id: 'twitter',
-      label: 'Twitter',
-      icon: 'i-mingcute-twitter-fill',
-      url: 'https://twitter.com/intent/tweet?text={text}&url={url}',
-      color: 'text-white',
-      bgColor: 'bg-sky-500',
-    },
-    {
-      id: 'facebook',
-      label: 'Facebook',
-      icon: 'i-mingcute-facebook-line',
-      url: 'https://www.facebook.com/sharer/sharer.php?u={url}',
-      color: 'text-white',
-      bgColor: 'bg-[#1877F2]',
-    },
-    {
-      id: 'telegram',
-      label: 'Telegram',
-      icon: 'i-mingcute-telegram-line',
-      url: 'https://t.me/share/url?url={url}&text={text}',
-      color: 'text-white',
-      bgColor: 'bg-[#0088CC]',
-    },
-    // {
-    //   id: 'weibo',
-    //   label: t('photo.share.weibo'),
-    //   icon: 'i-mingcute-weibo-line',
-    //   url: 'https://service.weibo.com/share/share.php?url={url}&title={text}',
-    //   color: 'text-white',
-    //   bgColor: 'bg-[#E6162D]',
-    // },
-  ]
+  // const socialOptions: SocialShareOption[] = [
+  //   {
+  //     id: 'twitter',
+  //     label: 'Twitter',
+  //     icon: 'i-mingcute-twitter-fill',
+  //     url: 'https://twitter.com/intent/tweet?text={text}&url={url}',
+  //     color: 'text-white',
+  //     bgColor: 'bg-sky-500',
+  //   },
+  //   {
+  //     id: 'facebook',
+  //     label: 'Facebook',
+  //     icon: 'i-mingcute-facebook-line',
+  //     url: 'https://www.facebook.com/sharer/sharer.php?u={url}',
+  //     color: 'text-white',
+  //     bgColor: 'bg-[#1877F2]',
+  //   },
+  //   {
+  //     id: 'telegram',
+  //     label: 'Telegram',
+  //     icon: 'i-mingcute-telegram-line',
+  //     url: 'https://t.me/share/url?url={url}&text={text}',
+  //     color: 'text-white',
+  //     bgColor: 'bg-[#0088CC]',
+  //   },
+  //   {
+  //     id: 'weibo',
+  //     label: t('photo.share.weibo'),
+  //     icon: 'i-mingcute-weibo-line',
+  //     url: 'https://service.weibo.com/share/share.php?url={url}&title={text}',
+  //     color: 'text-white',
+  //     bgColor: 'bg-[#E6162D]',
+  //   },
+  // ]
 
   const handleNativeShare = useCallback(async () => {
     const shareUrl = window.location.href
@@ -121,25 +121,25 @@ export const SharePanel = ({ photo, trigger, blobSrc }: SharePanelProps) => {
     }
   }, [t])
 
-  const handleSocialShare = useCallback(
-    (url: string) => {
-      const shareUrl = encodeURIComponent(window.location.href)
-      const defaultTitle = t('photo.share.default.title')
-      const shareTitle = encodeURIComponent(photo.title || defaultTitle)
-      const shareText = encodeURIComponent(
-        t('photo.share.text', { title: photo.title || defaultTitle }),
-      )
+  // const handleSocialShare = useCallback(
+  //   (url: string) => {
+  //     const shareUrl = encodeURIComponent(window.location.href)
+  //     const defaultTitle = t('photo.share.default.title')
+  //     const shareTitle = encodeURIComponent(photo.title || defaultTitle)
+  //     const shareText = encodeURIComponent(
+  //       t('photo.share.text', { title: photo.title || defaultTitle }),
+  //     )
 
-      const finalUrl = url
-        .replace('{url}', shareUrl)
-        .replace('{title}', shareTitle)
-        .replace('{text}', shareText)
+  //     const finalUrl = url
+  //       .replace('{url}', shareUrl)
+  //       .replace('{title}', shareTitle)
+  //       .replace('{text}', shareText)
 
-      window.open(finalUrl, '_blank', 'width=600,height=400')
-      setIsOpen(false)
-    },
-    [photo.title, t],
-  )
+  //     window.open(finalUrl, '_blank', 'width=600,height=400')
+  //     setIsOpen(false)
+  //   },
+  //   [photo.title, t],
+  // )
 
   // 功能选项
   const actionOptions: ShareOption[] = [
@@ -202,7 +202,7 @@ export const SharePanel = ({ photo, trigger, blobSrc }: SharePanelProps) => {
                 </div>
 
                 {/* 社交媒体分享 - 第一排 */}
-                <div className="mb-6">
+                {/* <div className="mb-6">
                   <div className="mb-3">
                     <h4 className="text-text-secondary text-xs font-medium tracking-wide uppercase">
                       {t('photo.share.social.media')}
@@ -238,7 +238,7 @@ export const SharePanel = ({ photo, trigger, blobSrc }: SharePanelProps) => {
                       </button>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* 功能选项 - 第二排 */}
                 <div>
