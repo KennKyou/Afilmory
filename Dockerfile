@@ -14,6 +14,9 @@ RUN corepack enable
 # -----------------
 FROM base AS builder
 
+# 增加 Node.js 內存限制
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 RUN apk update && apk add --no-cache git
 COPY . .
 RUN sh ./scripts/preinstall.sh
