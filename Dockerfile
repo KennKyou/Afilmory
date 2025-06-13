@@ -47,6 +47,7 @@ USER nextjs
 COPY --from=builder --chown=nextjs:nodejs /app/apps/ssr/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/ssr/.next/static /app/apps/ssr/.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/apps/ssr/public /app/apps/ssr/public
+COPY --from=builder --chown=nextjs:nodejs /app/apps/web/public /app/apps/web/public
 
 # The standalone output includes the server.js file.
 # The PORT environment variable is automatically used by Next.js.
