@@ -9,7 +9,7 @@
     "url": "https://github.com/Afilmory/Afilmory"
   },
   "scripts": {
-    "build": "pnpm --filter @afilmory/web build",
+    "build": "pnpm run build:manifest && pnpm --filter @afilmory/web build",
     "build:manifest": "pnpm --filter @afilmory/builder cli",
     "build:update-remote-repo": "sh scripts/build-update-remote-repo.sh",
     "dev": "pnpm --filter @afilmory/web dev",
